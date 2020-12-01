@@ -2,10 +2,9 @@
     ViewData["Title"] = "Map";
 }
 <head>
-<script
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
+      defer></script>
     <style type="text/css">
       /* Set the size of the div element that contains the map */
       #map {
@@ -15,26 +14,24 @@
         /* The width is the width of the web page */
       }
     </style>
-    <script>
-      // Initialize and add the map
-      function initMap() {
-        // The location of Romanian Palace of Parliament
-        const parliament = { lat: 44.4232, lng: 26.0858 };
-        // The map, centered at Parliament
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: parliament,
-        });
-        // The marker, positioned at Parliament
-        const marker = new google.maps.Marker({
-          position: parliament,
-          map: map,
-        });
-      }
-    </script>
-  </head>
+    <script src="~/js/map.js"></script>
+</head>
   <body>
     <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
+  <!--The div element for the map -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="map"></div>
+      </div>
+      <div class="col-md-auto">
+        <div>
+          <button type="button" class="btn btn-success margin" onclick="addLocation()">Add to Favourite</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-success margin" onclick="showLocations()">Show your Favourites</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
