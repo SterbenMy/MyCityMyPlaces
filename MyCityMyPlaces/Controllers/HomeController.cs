@@ -14,7 +14,7 @@ namespace MyCityMyPlaces.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        AppDb db = new AppDb();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -22,6 +22,8 @@ namespace MyCityMyPlaces.Controllers
 
         public IActionResult Index()
         {
+            // AppDb con = new AppDb();
+            // var constr = con.GetConnectionString();
             return View();
         }
 
