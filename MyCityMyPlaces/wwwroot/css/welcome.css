@@ -1,0 +1,86 @@
+﻿@import url(http://weloveiconfonts.com/api/?family=brandico);
+@import url(https://fonts.googleapis.com/css?family=Junge);
+*{
+    margin:0;
+    padding:0;
+
+
+}
+html,body{width:100%;height:100%;}
+
+body{         background:url('http://farm1.staticflickr.com/36/111023917_8de2b23011_o.jpg')no-repeat;
+    background-size:cover;
+    font-family:junge,georgia;
+    text-align:center;
+}
+
+/* brandico */
+[class*="brandico-"]:before {
+    font-family: 'brandico', sans-serif;
+}
+
+.content{max-width:40%; max-height:50%;margin:100px auto;}
+
+.welcomeText,.form,.social{ width:100%; }
+
+.welcome{
+    height:100px;
+    position:relative;
+    border-bottom:1px solid;
+    overflow:hidden;
+}
+
+.greet{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:100%;
+    font-size:50px;
+    text-align:center;
+    line-height:100px;
+    transition:all .5s;
+}
+
+.subText{
+    width:100%;
+    height:100px;
+    position:relative;
+    font-size:30px;
+    overflow:hidden;
+}
+.subText p{
+    height:100%;
+    line-height:100px;
+    text-align:center;
+
+}
+.subTexts{
+    width:100%;
+    position:absolute;
+    bottom:100%;
+    text-align:center;
+    overflow:hidden;
+    transition:all .5s;
+}
+
+.form{
+    width:100%;
+    height:100px;
+    position:relative;
+}
+
+input:focus{outline:none;}
+
+@media screen and (max-width:930px){
+    .subTexts p {font-size:20px}
+    .button{font-size:12px}
+
+}
+@media screen and (max-width:600px){
+    .welcome,.subText,.sub{background:rgba(255,255,255,.3);}
+    .welcome{border-radius:20px 20px 0 0;}
+    .subText{border-radius:0 0 20px 20px;}
+    .sub{border:1px solid;}
+    .greet{font-size:30px}
+    .subTexts p {font-size:16px;}
+}
