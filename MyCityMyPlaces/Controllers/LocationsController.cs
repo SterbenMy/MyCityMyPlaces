@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyCityMyPlaces.Data;
 using MyCityMyPlaces.Models;
 
 namespace MyCityMyPlaces.Controllers
@@ -13,12 +14,15 @@ namespace MyCityMyPlaces.Controllers
     public class LocationsController:Controller
     {
         private readonly ILogger<LocationsController> _logger;
-
+        private readonly ApplicationDbContext _context;
         public LocationsController(ILogger<LocationsController> logger)
         {
             _logger = logger;
         }
-
+        public LocationsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Locations()
         {
             return View();

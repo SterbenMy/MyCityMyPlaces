@@ -14,10 +14,21 @@
         <e p="HomeController.cs" t="Include" />
         <e p="LocationsController.cs" t="Include" />
         <e p="MapController.cs" t="Include" />
+        <e p="UserController.cs" t="Include" />
+      </e>
+      <e p="Data" t="Include">
+        <e p="ApplicationDbContext.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20201204164447_DbInit.cs" t="Include" />
+        <e p="20201204164447_DbInit.Designer.cs" t="Include" />
+        <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
-        <e p="AppDb.cs" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
+        <e p="Family.cs" t="Include" />
+        <e p="Location.cs" t="Include" />
+        <e p="User.cs" t="Include" />
       </e>
       <e p="MyCityMyPlaces.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive">

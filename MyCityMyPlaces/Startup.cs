@@ -11,10 +11,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using MyCityMyPlaces.Data;
+using Pomelo.EntityFrameworkCore.MySql;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+
 
 namespace MyCityMyPlaces
 {
@@ -31,6 +36,22 @@ namespace MyCityMyPlaces
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<ApplicationDbContext>(
+                dbContextOptions => dbContextOptions
+                    .UseMySql(
+                        // Replace with your connection string.
+                        "server=localhost;user=root;password=12345;database=bigdataproject",
+                        // Replace with your server version and type.
+                        // For common usages, see pull request #1233.
+                        new MySqlServerVersion(new Version(8, 0, 22)), // use MariaDbServerVersion for MariaDB
+                        mySqlOptions => mySqlOptions
+                            .CharSetBehavior(CharSetBehavior.NeverAppend))
+                    // Everything from this point on is optional but helps with debugging.
+                    .EnableSensitiveDataLogging()
+                    .EnableDetailedErrors()
+                );
+           
+            
             services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureAd"));
 
