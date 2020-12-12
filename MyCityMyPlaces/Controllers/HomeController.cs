@@ -21,8 +21,6 @@ namespace MyCityMyPlaces.Controllers
 
         public IActionResult Index()
         {
-            // AppDb con = new AppDb();
-            // var constr = con.GetConnectionString();
             return View();
         }
 

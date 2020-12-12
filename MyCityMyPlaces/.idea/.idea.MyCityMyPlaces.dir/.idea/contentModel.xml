@@ -25,6 +25,7 @@
         <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
+        <e p="AppDb.cs" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="Family.cs" t="Include" />
         <e p="Location.cs" t="Include" />

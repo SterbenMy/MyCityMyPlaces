@@ -1,0 +1,18 @@
+Index: Controllers/HomeController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\r\nusing System.Collections.Generic;\r\nusing System.Diagnostics;\r\nusing System.Linq;\r\nusing System.Threading.Tasks;\r\nusing Microsoft.AspNetCore.Authorization;\r\nusing Microsoft.AspNetCore.Mvc;\r\nusing Microsoft.Extensions.Logging;\r\nusing MyCityMyPlaces.Models;\r\n\r\nnamespace MyCityMyPlaces.Controllers\r\n{\r\n    [Authorize]\r\n    public class HomeController : Controller\r\n    {\r\n        private readonly ILogger<HomeController> _logger;\r\n        \r\n        public HomeController(ILogger<HomeController> logger)\r\n        {\r\n            _logger = logger;\r\n        }\r\n\r\n        public IActionResult Index()\r\n        {\r\n            // AppDb con = new AppDb();\r\n            // var constr = con.GetConnectionString();\r\n            return View();\r\n        }\r\n\r\n        public IActionResult Privacy()\r\n        {\r\n            return View();\r\n        }\r\n\r\n        [AllowAnonymous]\r\n        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]\r\n        public IActionResult Error()\r\n        {\r\n            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Controllers/HomeController.cs	(revision 1e754306f01ced23bb4e39dd429bd872f01e3a2b)
++++ Controllers/HomeController.cs	(date 1607709075018)
+@@ -22,8 +22,6 @@
+ 
+         public IActionResult Index()
+         {
+-            // AppDb con = new AppDb();
+-            // var constr = con.GetConnectionString();
+             return View();
+         }
+ 
